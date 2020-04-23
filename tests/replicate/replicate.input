@@ -1,0 +1,19 @@
+# ------------------------ INITIALIZATION ----------------------------
+units 		metal
+dimension	3
+boundary	p	p	p
+atom_style	atomic
+
+# ----------------------- ATOM DEFINITION ----------------------------
+box tilt large
+read_data   /home/kacper/praca_inzynierska/lattice_structure/Bi2O3_1526458/cif_file.data
+region		whole block 0 10 0 10 0 10
+replicate 3 3 3
+
+set type 1 diameter 1
+
+mass 1 208.98038 #bizmut
+mass 2 47.88 #tlen
+
+dump myDump all atom 100 dump.atom
+run     0

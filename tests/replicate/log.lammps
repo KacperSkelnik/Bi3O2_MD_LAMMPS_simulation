@@ -1,0 +1,27 @@
+LAMMPS (7 Aug 2019)
+# ------------------------ INITIALIZATION ----------------------------
+units 		metal
+dimension	3
+boundary	p	p	p
+atom_style	atomic
+
+# ----------------------- ATOM DEFINITION ----------------------------
+box tilt large
+read_data   /home/kacper/praca_inzynierska/lattice_structure/Bi2O3_1526458/cif_file.data
+  triclinic box = (0 0 0) to (5.8444 8.1574 6.90827) with tilt (4.99497e-16 -2.92812 6.38734e-16)
+WARNING: Triclinic box skew is large (../domain.cpp:191)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  20 atoms
+  read_data CPU = 0.00329755 secs
+region		whole block 0 10 0 10 0 10
+replicate 3 3 3
+  triclinic box = (0 0 0) to (17.5332 24.4722 20.7248) with tilt (1.49849e-15 -8.78435 1.9162e-15)
+WARNING: Triclinic box skew is large (../domain.cpp:191)
+  1 by 1 by 1 MPI processor grid
+  540 atoms
+  replicate CPU = 0.000173884 secs
+
+set type 1 diameter 1
+ERROR: Cannot set this attribute for this atom style (../set.cpp:344)
+Last command: set type 1 diameter 1
